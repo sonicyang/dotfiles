@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/sonicyang/.oh-my-zsh
+export ZSH=/home/sonicyang/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -51,7 +51,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast mosh)
+plugins=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -83,8 +83,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux="TERM=xterm-256color tmux"
+
+export PATH=~/Applications/gcc-arm-none-eabi-4_8-2014q3/bin/:$PATH
 
 eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias FUCK)"
+
+. ~/Applications/z/z.sh
+
+eval "$(thefuck --alias)"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias FUCK)"
+
+alias python=python3
+alias vim=nvim
