@@ -191,14 +191,12 @@
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     endif
     set termguicolors
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
-    let g:solarized_contrast="normal"
-    let g:solarized_visibility="normal"
-    colorscheme NeoSolarized
+    let g:selenized_green_keywords=1
+    colorscheme selenized
     set background=dark
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
+    set colorcolumn=80
 
     set cursorline                  " Highlight current line
 
@@ -243,10 +241,10 @@
 " Formatting {
     set nowrap                      " Do not wrap long lines
     set autoindent                  " Indent at the same level of the previous line
-    set shiftwidth=4                " Use indents of 4 spaces
+    set shiftwidth=2                " Use indents of 4 spaces
     set expandtab                   " Tabs are spaces, not tabs
-    set tabstop=4                   " An indentation every four columns
-    set softtabstop=4               " Let backspace delete indent
+    set tabstop=2                   " An indentation every four columns
+    set softtabstop=2               " Let backspace delete indent
     set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
     set splitright                  " Puts new vsplit windows to the right of the current
     set splitbelow                  " Puts new split windows to the bottom of the current

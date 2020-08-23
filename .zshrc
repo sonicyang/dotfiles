@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/workspace/rpi4/tools/arm-bcm2708/arm-linux-gnueabihf/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/sonicyang/.oh-my-zsh
@@ -98,3 +98,6 @@ eval "$(thefuck --alias FUCK)"
 
 alias python=python3
 alias vim=nvim
+alias gst="git status"
+
+export DISPLAY=192.168.11.17:0 
