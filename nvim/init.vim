@@ -63,7 +63,7 @@
             call dein#add('reedes/vim-wordy')
 
             " General Programming
-            call dein#add('scrooloose/syntastic')
+            "call dein#add('scrooloose/syntastic')
             call dein#add('tpope/vim-fugitive')
             call dein#add('mattn/webapi-vim')
             call dein#add('mattn/gist-vim')
@@ -72,10 +72,11 @@
             call dein#add('godlygeek/tabular')
             call dein#add('luochen1990/rainbow')
             call dein#add('majutsushi/tagbar')
-            call dein#add('ludovicchabant/vim-gutentags')
             call dein#add('abudden/taghighlight-automirror')
-            call dein#add('neomake/neomake')
-            
+            "call dein#add('neomake/neomake')
+            call dein#add('brgmnn/vim-opencl')
+            call dein#add('dense-analysis/ale')
+
             " Python
             call dein#add('klen/python-mode')
             call dein#add('yssource/python.vim')
@@ -191,18 +192,22 @@
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     endif
     set termguicolors
-    let g:selenized_green_keywords=1
-    colorscheme selenized
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="normal"
+    let g:solarized_visibility="normal"
+    colorscheme NeoSolarized
     set background=dark
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
-    set colorcolumn=80
+    set colorcolumn=100
 
     set cursorline                  " Highlight current line
 
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
     "highlight clear CursorLineNr    " Remove highlight color from current line number
+    set colorcolumn=100
 
     set ruler                   " Show the ruler
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
@@ -215,7 +220,7 @@
     set statusline+=%w%h%m%r                 " Options
     set statusline+=\ [%{&ff}/%Y]            " Filetype
     set statusline+=\ [%{getcwd()}]          " Current dir
-    set statusline+=\ %{gutentags#statusline()}                                                                                                                                                         
+    set statusline+=\ %{gutentags#statusline()}
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
 
@@ -241,10 +246,10 @@
 " Formatting {
     set nowrap                      " Do not wrap long lines
     set autoindent                  " Indent at the same level of the previous line
-    set shiftwidth=2                " Use indents of 4 spaces
-    set expandtab                   " Tabs are spaces, not tabs
-    set tabstop=2                   " An indentation every four columns
-    set softtabstop=2               " Let backspace delete indent
+    set shiftwidth=4                " Use indents of 4 spaces
+    "set expandtab                   " Tabs are spaces, not tabs
+    set tabstop=4                   " An indentation every four columns
+    set softtabstop=4               " Let backspace delete indent
     set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
     set splitright                  " Puts new vsplit windows to the right of the current
     set splitbelow                  " Puts new split windows to the bottom of the current
@@ -252,7 +257,7 @@
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
-    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    "autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> call StripTrailingWhitespace()
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -527,10 +532,14 @@
         let g:pymode_rope = 0
     " }
     "
-    " Neomake {
-        call neomake#configure#automake('nrwi', 500)
-        let s:python_version=3
-        let g:neomake_python_enabled_makers = ['pep8', 'mypy', 'pyflakes', 'pylint']
+    " ALE {
+        let g:airline#extensions#ale#enabled = 1
+        let g:ale_linters_explicit = 1
+        let g:ale_linters = {'c': ['clang'], 'cpp': ['clang', 'g++', 'clangd']}
+        let g:ale_c_cc_options = '-Wall -std=c99'
+        let g:ale_cpp_cc_options = '-Wall -std=c++17'
+        let g:ale_c_parse_makefile = 1
+        let g:ale_cpp_cpplint_options = "+* --linelength=100"
     " }
 
     " ctrlp {
