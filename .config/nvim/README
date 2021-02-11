@@ -1,0 +1,24 @@
+Requirements
+
+ * neovim
+ * nodejs
+ * universial-ctags
+ * digestif
+ * sql-language-server
+ * efm-langserver
+
+ * C/C++
+     * g++
+     * clang++
+     * clangcheck
+     * clang-tidy
+     * clazy
+     * cquery
+     * cpplint
+     * cppcheck
+     * flawfinder
+
+ * Python
+     * flake8
+     * mypy
+     * pylint
