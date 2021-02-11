@@ -5,7 +5,7 @@ if has('patch-8.1.2292') == 0 && exists('*nvim_open_win') == 0
 endif
 
 let g:quickui_border_style = 2
-let g:quickui_color_scheme = 'papercol dark'
+let g:quickui_color_scheme = 'gruvbox'
 
 let g:quickui_preview_w = 100
 let g:quickui_preview_h = 15
@@ -37,30 +37,17 @@ call quickui#menu#install("&Edit", [
             \ ['&Align by Char', 'call feedkeys(":Tabularize /")', ''],
             \ ])
 
-call quickui#menu#install('&Symbol', [
-            \ [ 'List &Function', 'call quickui#tools#list_function()', ],
-            \ [ "&Grep Word\t(In Project)", 'call MenuHelp_GrepCode()', 'Grep keyword in current project' ],
-            \ [ "--", ],
-            \ [ "Find &Definition\t(GNU Global)", 'call MenuHelp_Gscope("g")', 'GNU Global search g'],
-            \ [ "Find &Symbol\t(GNU Global)", 'call MenuHelp_Gscope("s")', 'GNU Gloal search s'],
-            \ [ "Find &Called by\t(GNU Global)", 'call MenuHelp_Gscope("d")', 'GNU Global search d'],
-            \ [ "Find C&alling\t(GNU Global)", 'call MenuHelp_Gscope("c")', 'GNU Global search c'],
-            \ [ "Find &From Ctags\t(GNU Global)", 'call MenuHelp_Gscope("z")', 'GNU Global search c'],
-            \ [ "--", ],
-            \ [ "Goto D&efinition\t(YCM)", 'YcmCompleter GoToDefinitionElseDeclaration'],
-            \ [ "Goto &References\t(YCM)", 'YcmCompleter GoToReferences'],
-            \ [ "Get D&oc\t(YCM)", 'YcmCompleter GetDoc'],
-            \ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
-            \ ])
-
 call quickui#menu#install('&Tools', [
-            \ ['Display &Messages', 'call quickui#tools#display_messages()', ],
-            \ ['List &Buffer', 'call quickui#tools#list_buffer("FileSwitch tabe")', ],
+            \ ["Display &Messages", 'call quickui#tools#display_messages()', ],
+            \ ["List &Buffer\t<Ctrl-q>", 'call quickui#tools#list_buffer("FileSwitch tabe")', ],
+            \ ["List &Function\t<Ctrl-f>", 'call quickui#tools#list_function()'],
             \ ])
 
 call quickui#menu#install('&Plugin', [
             \ ["&NERDTree\t<F2>", 'NERDTreeToggle', 'toggle nerdtree'],
             \ ["&Tagbar\t<F3>", 'TagbarToggle', 'toggle tagbar'],
+            \ ["&SrcExpl\t<F4>", 'SrcExplToggle', 'toggle tagbar'],
+            \ ["&LocList\t<F5>", 'call ToggleLocList()', 'toggle tagbar'],
             \ ['&Wordy', 'Wordy weak', ''],
             \ ])
 
@@ -83,22 +70,6 @@ let g:context_menu_k = [
             \ ["&Toggle Errors\t<F5>", 'call ToggleLocList()'],
             \ [ "--", ],
             \ ["&Peek Definition\tCtrl+d", 'call quickui#tools#preview_tag("")'],
-            \ ["S&earch in Project\t\\cx", 'exec "silent! GrepCode! " . expand("<cword>")'],
-            \ [ "--", ],
-            \ [ "Find &Definition\t\\cg", 'call MenuHelp_Fscope("g")', 'GNU Global search g'],
-            \ [ "Find &Symbol\t\\cs", 'call MenuHelp_Fscope("s")', 'GNU Gloal search s'],
-            \ [ "Find &Called by\t\\cd", 'call MenuHelp_Fscope("d")', 'GNU Global search d'],
-            \ [ "Find C&alling\t\\cc", 'call MenuHelp_Fscope("c")', 'GNU Global search c'],
-            \ [ "Find &From Ctags\t\\cz", 'call MenuHelp_Fscope("z")', 'GNU Global search c'],
-            \ [ "--", ],
-            \ [ "Goto D&efinition\t(YCM)", 'YcmCompleter GoToDefinitionElseDeclaration'],
-            \ [ "Goto &References\t(YCM)", 'YcmCompleter GoToReferences'],
-            \ [ "Get D&oc\t(YCM)", 'YcmCompleter GetDoc'],
-            \ [ "Get &Type\t(YCM)", 'YcmCompleter GetTypeImprecise'],
-            \ [ "--", ],
-            \ ['Dash &Help', 'call asclib#utils#dash_ft(&ft, expand("<cword>"))'],
-            \ ['Cpp&man', 'exec "Cppman " . expand("<cword>")', '', 'c,cpp'],
-            \ ['P&ython Doc', 'call quickui#tools#python_help("")', 'python'],
             \ ]
 
 " display vim messages in the textbox

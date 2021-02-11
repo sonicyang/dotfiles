@@ -4,7 +4,7 @@
 let g:ale_disable_lsp = 1
 
 " Show error if any
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 
 " These 2 some how sucks, the echo_msg is overwritten and window size revert
 " on manual loclist close/open

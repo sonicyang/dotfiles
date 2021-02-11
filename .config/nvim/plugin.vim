@@ -24,6 +24,7 @@ if dein#load_state('~/.cache/dein')
     "call dein#add('altercation/vim-colors-solarized')
     call dein#add('spf13/vim-colors')
     call dein#add('flazz/vim-colorschemes')
+    call dein#add('rafi/awesome-vim-colorschemes')
 
     " UI Prettify
     " call dein#add('bling/vim-bufferline')

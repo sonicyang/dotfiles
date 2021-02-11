@@ -10,7 +10,7 @@ endif
 " *** Color ***
 set termguicolors
 " TODO
-colorscheme NeoSolarized
+colorscheme gruvbox
 set background=dark
 
 " *** UI ***
