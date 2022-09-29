@@ -1,0 +1,16 @@
+[user]
+	email = chungfan.yang@fixstars.com
+	name = Chung-Fan Yang
+[core]
+	editor = nvim
+	excludesFile = /home/sonicyang/.gitignore
+[diff]
+	tool = meld
+[icdiff]
+	options = --highlight --line-numbers
+[color]
+	ui = auto
+[rebase]
+    instructionFormat = (%an <%ae>) %s
+[checkout]
+    defaultRemote = origin

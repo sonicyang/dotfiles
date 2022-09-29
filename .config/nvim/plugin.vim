@@ -75,6 +75,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('wesleyche/SrcExpl')
     call dein#add('BenBergman/TagHighlight')
     call dein#add('ludovicchabant/vim-gutentags')
+    call dein#add('jackguo380/vim-lsp-cxx-highlight')
     "call dein#add('wesleyche/Trinity')
 
     " Autocomplete and Linting

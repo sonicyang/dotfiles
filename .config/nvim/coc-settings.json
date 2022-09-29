@@ -1,6 +1,7 @@
 {
     "diagnostic.displayByAle": true,
     "clangd.enabled": false,
+    "coc.preferences.semanticTokensHighlights": true,
     "languageserver": {
         "ccls": {
             "command": "ccls",
@@ -8,7 +9,19 @@
             "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
             "initializationOptions": {
                 "cache": {
-                    "directory": "/tmp/ccls"
+                    "directory": "/home/sonicyang/ccls"
+                },
+                "index": {
+                    "threads": 4
+                },
+                "clang" : {
+                    "extraArgs" : ["-std=c++17"]
+                },
+                "client": {
+                    "snippetSupport": true
+                },
+                "highlight": {
+                    "lsRanges": true
                 }
             }
         },

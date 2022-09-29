@@ -100,4 +100,10 @@ alias python=python3
 alias vim=nvim
 alias gst="git status"
 
-export DISPLAY=192.168.11.17:0 
+export DISPLAY=192.168.11.17:0
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export DefaultIMModule=fcitx
+xset -r 49 # 半角全角点滅防止

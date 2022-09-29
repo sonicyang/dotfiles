@@ -83,3 +83,5 @@ endif
 let g:skipview_files = [
     \ '\[example pattern\]'
     \ ]
+
+autocmd VimEnter * RainbowToggleOn
