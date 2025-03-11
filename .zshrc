@@ -32,7 +32,7 @@ ZSH_THEME="bira"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -84,17 +84,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=~/Applications/gcc-arm-none-eabi-4_8-2014q3/bin/:$PATH
-
-eval "$(thefuck --alias)"
-# You can use whatever you want as an alias, like for Mondays:
-eval "$(thefuck --alias FUCK)"
-
 . ~/Applications/z/z.sh
-
-eval "$(thefuck --alias)"
-# You can use whatever you want as an alias, like for Mondays:
-eval "$(thefuck --alias FUCK)"
 
 alias python=python3
 alias vim=nvim
+alias gst="git status"
+
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+bindkey -r "^[x"
+
+export CMAKE_C_COMPILER_LAUNCHER=ccache
+export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+# export CCACHE_DIR=/ccache/ccache
+
+export EDITOR=nvim
