@@ -1,0 +1,52 @@
+{
+    "diagnostic.displayByAle": true,
+    "diagnostic.checkCurrentLine": false,
+    "clangd.enabled": false,
+    "coc.preferences.semanticTokensHighlights": true,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "compilationDatabaseDirectory": "build",
+                "cache": {
+                    "directory": "/home/sonicyang/.cache/ccls"
+                },
+                "index": {
+                    "threads": 1
+                },
+                "clang" : {
+                    "extraArgs" : ["-std=c++17"]
+                },
+                "client": {
+                    "snippetSupport": true
+                },
+                "highlight": {
+                    "lsRanges": true
+                }
+            }
+        },
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+            "filetypes": ["haskell", "lhaskell"]
+        },
+        "fortran": {
+            "command": "fortls",
+            "filetypes": ["fortran"],
+            "rootPatterns": [".fortls", ".git/"]
+        },
+        "sql": {
+            "command": "sql-language-server",
+            "args" : ["up", "--method", "stdio"],
+            "filetypes": ["sql", "mysql"]
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            "filetypes": ["vim", "eruby", "markdown"]
+        }
+    }
+}
